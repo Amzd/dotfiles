@@ -9,8 +9,11 @@ alias scripts="cd ~/dev/scripts;nvim ."
 
 alias dot="dotfiles"
 alias dotfiles="git --git-dir=$HOME/dev/dotfiles --work-tree=$HOME"
+alias dotopen="open $(dot remote -v | grep -o 'https[^ ]*' | uniq)"
+# alias "git open"="open $(git remote -v | grep -o 'https[^ ]*' | uniq)"
 
-alias ollama="~/dev/ollama/ollama"
+# test 1
+alias ollama="~/dev/ollama/ollama" # test 2
 alias ai="ollama run codellama:13b"
 
 if status is-interactive
