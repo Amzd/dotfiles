@@ -3,10 +3,15 @@
 # always use neovim
 alias vim="nvim"
 alias vi="nvim"
+alias vimdiff="nvim -d"
 alias vimconf="cd ~/.config/nvim;nvim ."
 alias scripts="cd ~/dev/scripts;nvim ."
 
+alias dot="dotfiles"
 alias dotfiles="git --git-dir=$HOME/dev/dotfiles --work-tree=$HOME"
+
+alias ollama="~/dev/ollama/ollama"
+alias ai="ollama run codellama:13b"
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
@@ -19,8 +24,6 @@ end
 function killuplay
   ps aux | grep -E "uplay" | grep -v grep | awk '{print $2}' | xargs kill
 end
-
-alias killollama="service ollama stop"
 
 function swiftenv
   set selected $(find /usr/libexec/swift -type d -regex '/usr/libexec/swift/[^/]+' | sed 's/.usr.libexec.swift.//' | fzf); or return
