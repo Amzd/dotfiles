@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+INPUT=${1:-$(find . -type f \( -name "*.mp4" -o -name "*.mkv" \) | fzf | sed 's/..//')}
+[ -z "$INPUT" ] && return 1
+echo "Lowering quality of $INPUT"
+
+echo "Constant rate factor (CRF)"
+echo "23 is DVD quality, lower number is higher quality"
+read -r "CRF?CRF (23):" || return 1
+CRF=${CRF:-"23"}
+
+DEFAULT_OUTPUT=$(echo "$INPUT" | sed -E 's/(.*)\./\1_lowql\./')
+if [ "$DEFAULT_OUTPUT" != "*.mp4" ]; then
+    read -r "CONVERT?Convert to mp4 (Y/n):" || return 1
+    CONVERT=${CONVERT:-"Y"}
+    if [[ "$CONVERT" == [yY] || "$CONVERT" == [yY][eE][sS] ]]; then
+        DEFAULT_OUTPUT=$(echo "$DEFAULT_OUTPUT" | sed -E 's/(.*)\.(.+)/\1\.mp4/')
+    fi
+fi
+read -r "OUTPUT?New file name ($DEFAULT_OUTPUT):" || return 1
+OUTPUT=${OUTPUT:-$DEFAULT_OUTPUT}
+
+ffmpeg -i "$INPUT" -crf "$CRF" "$OUTPUT"
+
+
+

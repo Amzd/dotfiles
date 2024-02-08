@@ -1,0 +1,7 @@
+if test -z "$1"; then
+    FILE=$(find . -type f | fzf) || return 1;
+    xdg-open "$FILE"
+else
+    xdg-open "$1"
+fi
+

@@ -1,0 +1,3 @@
+#!/bin/zsh
+FILE=$(find ~/dev/notes/*.md -type f | fzf) || return 1
+nvim "$FILE"

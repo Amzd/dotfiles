@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+INPUT=${1:-$(find . -type f \( -name "*.mp4" -o -name "*.mkv" \) | fzf | sed 's/..//')}
+[ -z "$INPUT" ] && return 1
+echo "Converting $INPUT"
+
+read -r "VIDEOTYPE?To video type (mp4):" || return 1
+VIDEOTYPE=${VIDEOTYPE:-mp4}
+
+DEFAULT_OUTPUT=$(echo "$INPUT" | sed -E 's/\.(.*)$/\.'"$VIDEOTYPE"'/')
+read -r "OUTPUT?New file name ($DEFAULT_OUTPUT):" || return 1
+OUTPUT=${OUTPUT:-$DEFAULT_OUTPUT}
+
+ffmpeg -i "$INPUT" -q:v 0 "$OUTPUT"
+

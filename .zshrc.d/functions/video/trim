@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+# First arg or prompt for video file
+INPUT=${1:-$(find . -type f \( -name "*.mp4" -o -name "*.mkv" \) | fzf | sed 's/..//')}
+[ -z "$INPUT" ] && return 1
+echo "Trimming $INPUT"
+
+read -r "START?Start time in mm:ss or seconds (00:00):" || return 1
+START=${START:-"00:00"}
+
+read -r "DURATION?Duration in seconds (10):" || return 1
+DURATION=${DURATION:-"10"}
+
+DEFAULT_OUTPUT=$(echo "$INPUT" | sed -E 's/(.*)\./\1_trim\./')
+read -r "OUTPUT?New file name ($DEFAULT_OUTPUT):" || return 1
+OUTPUT=${OUTPUT:-$DEFAULT_OUTPUT}
+
+ffmpeg -i "$INPUT" -ss "$START" -t "$DURATION" -c:v copy -c:a copy "$OUTPUT"
+
