@@ -4,16 +4,21 @@
 alias vim="nvim"
 alias vi="nvim"
 alias vimdiff="nvim -d"
-alias vimconf="cd ~/.config/nvim;nvim ."
-alias scripts="cd ~/dev/scripts;nvim ."
+alias vimconf="cd ~/.config/nvim;nvim"
+alias scripts="cd ~/dev/scripts;nvim"
 
 alias dot="dotfiles"
 alias dotfiles="git --git-dir=$HOME/dev/dotfiles --work-tree=$HOME"
-alias dotopen="open $(dot remote -v | grep -o 'https[^ ]*' | uniq)"
-alias gitopen="open $(git remote -v | grep -o 'https[^ ]*' | uniq)"
+alias dotopen='open $(dot remote -v | grep -o "https[^ ]*" | uniq)'
+alias gitopen='open $(git remote -v | grep -o "https[^ ]*" | uniq)'
 
 alias ollama="~/dev/ollama/ollama"
 alias ai="ollama run codellama:13b"
+
+function notes
+  set file $(find ~/dev/notes/*.md -type f | fzf); or return
+  nvim $file
+end
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
