@@ -9,7 +9,6 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export ZSH="$HOME/.oh-my-zsh"
-export SOURCEKIT_LOGGING="3"
 
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -55,13 +54,4 @@ export EDITOR='nvim'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Load all files in .zshrc.d folder
-for file in ~/.zshrc.d/*.zsh; do
-    source "$file"
-done
-
-# Custom functions
-fpath=( ~/.zshrc.d/functions "${fpath[@]}" )
-autoload -Uz ~/.zshrc.d/functions/*(:t)
-fpath=( ~/.zshrc.d/functions/video "${fpath[@]}" )
-autoload -Uz ~/.zshrc.d/functions/video/*(:t)
+# My aliases and functions are sourced in .zshenv, so they're available everywhere
