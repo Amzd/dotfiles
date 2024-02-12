@@ -3,9 +3,9 @@ alias vim="nvim"
 alias vi="nvim"
 alias vimdiff="nvim -d"
 
-alias nvimconf="cd ~/.config/nvim;nvim"
-alias zshconf="nvim ~/.zshrc ~/.zshenv --cmd 'cd ~/.zshrc.d'"
-alias omz="nvim ~/.oh-my-zsh"
+alias nvimconf="nvim --cmd 'cd ~/.config/nvim'"
+alias zshconf="nvim ~/.zshrc ~/.zshenv -O2 --cmd 'cd ~/.zshrc.d'"
+alias omz="nvim ~/.oh-my-zsh --cmd 'cd ~'"
 
 alias scripts="cd ~/dev/scripts;nvim"
 
