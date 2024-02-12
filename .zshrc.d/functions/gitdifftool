@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+if [ -z "$2" ]; then
+    echo "Added: $1"
+elif [ -z "$5" ]; then
+    echo "Removed: $1"
+else
+    printf '%.s─' $(seq 1 $(tput cols))
+    printf "\n$1\n"
+    printf '%.s-' $(seq 1 $(tput cols))
+    printf "\n"
+    diff --side-by-side --width="$(tput cols)" --suppress-common-lines "$2" "$5"
+    printf "\n"
+fi
