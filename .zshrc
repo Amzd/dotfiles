@@ -57,6 +57,11 @@ export EDITOR='nvim'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export INVOKEAI_ROOT=$HOME/dev/InvokeAI
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+export INVOKEAI_ROOT="$HOME/dev/InvokeAI"
 
 # My aliases and functions are sourced in .zshenv, so they're available everywhere
