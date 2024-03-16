@@ -6,6 +6,7 @@ alias vimdiff="nvim -d"
 alias nvimconf="nvim --cmd 'cd ~/.config/nvim'"
 alias zshconf="nvim ~/.zshrc ~/.zshenv -O2 --cmd 'cd ~/.zshrc.d'"
 alias omz="nvim ~/.oh-my-zsh --cmd 'cd ~'"
+alias fishconf="nvim ~/.config/fish/config.fish"
 
 alias scripts="cd ~/dev/scripts;nvim"
 
