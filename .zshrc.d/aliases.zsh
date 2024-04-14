@@ -23,3 +23,5 @@ alias fcd='cd "$(find -type d | fzf)"'
 alias lsn="ls -lGq"
 alias lst="ls -lGqt"
 alias lss="ls -lGqS"
+
+alias theos="$THEOS"
