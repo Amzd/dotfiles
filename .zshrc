@@ -71,3 +71,7 @@ eval "$(pyenv init -)"
 export INVOKEAI_ROOT="$HOME/dev/InvokeAI"
 
 # My aliases and functions are sourced in .zshenv, so they're available everywhere
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
