@@ -11,6 +11,9 @@ fi
 # pip3 path
 export PATH=$HOME/.local/bin:$PATH
 
+# cargo path
+export PATH=$HOME/.cargo/bin:$PATH
+
 export ZSH="$HOME/.oh-my-zsh"
 
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
