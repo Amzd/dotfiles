@@ -1,0 +1,18 @@
+# Check if any files are selected
+if [ -n "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" ]; then
+    # Loop through each file path
+    for file_path in $(echo -n "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS"); do
+        # Call SimpleSteamShortcutAdder
+        ~/.bin/SimpleSteamShortcutAdder "$file_path"
+
+        # Restart Steam
+        # xdg-open only closes steam if it is already launched,
+        # if you don't care about that you can also use `steam steam://exit` but then
+        # Steam might launch just to close again which takes more time.
+        xdg-open steam://exit
+        sleep 5
+        steam &
+    done
+else
+    echo "No files selected."
+fi
