@@ -17,9 +17,9 @@ alias gitopen='open $(git remote -v | grep -o "https[^ ]*" | uniq)'
 
 alias ollama="~/dev/ollama/ollama"
 # serve fails gracefully if already running
-alias ai="(ollama serve > /dev/null 2>&1 &); ollama run codellama:13b"
+alias ai="(ollama serve > /dev/null 2>&1 &); ollama run llama3"
 
-alias fcd='cd "$(find -type d | fzf)"'
+alias fcd='cd "$(fd --type d | fzf)"'
 alias lsn="ls -lGq"
 alias lst="ls -lGqt"
 alias lss="ls -lGqS"
