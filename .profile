@@ -3,3 +3,5 @@
 # The issue persists on GLFW games like Minecraft.
 export SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS=0
 
+# Always start OBS capture
+export OBS_VKCAPTURE=1
