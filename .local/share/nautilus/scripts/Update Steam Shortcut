@@ -1,0 +1,18 @@
+# Call SteamShortcutUpdater
+RESULT=$(~/.bin/SteamShortcutUpdater $1)
+
+if [ $? -eq 0 ]
+then
+    # Restart Steam
+    # xdg-open only closes steam if it is already launched,
+    # if you don't care about that you can also use `steam steam://exit` but then
+    # Steam might launch just to close again which takes more time.
+    xdg-open steam://exit
+    sleep 5
+    steam &
+    exit 0
+else
+    notify-send "SteamShortcutUpdater failed" "$RESULT"
+    exit 1
+fi
+
