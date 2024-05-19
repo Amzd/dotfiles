@@ -25,3 +25,5 @@ alias lst="ls -lGqt"
 alias lss="ls -lGqS"
 
 alias theos="$THEOS"
+
+alias mp3="mpv --no-vid"
