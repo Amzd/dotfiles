@@ -19,6 +19,8 @@ alias ollama="~/dev/ollama/ollama"
 # serve fails gracefully if already running
 alias ai="(ollama serve > /dev/null 2>&1 &); ollama run llama3"
 
+alias aicli="gh copilot suggest"
+
 alias fcd='cd "$(fd --type d | fzf)"'
 alias lsn="ls -lGq"
 alias lst="ls -lGqt"
