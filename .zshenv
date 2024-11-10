@@ -19,3 +19,4 @@ autoload -Uz ~/.zshrc.d/functions/video/*(:t)
 
 export GIT_EXTERNAL_DIFF="~/.zshrc.d/functions/gitdifftool"
 export THEOS=~/theos
+. "$HOME/.cargo/env"

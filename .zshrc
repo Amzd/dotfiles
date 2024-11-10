@@ -14,6 +14,9 @@ export PATH=$HOME/.local/bin:$PATH
 # cargo path
 export PATH=$HOME/.cargo/bin:$PATH
 
+# mint path https://github.com/yonaskolb/Mint
+export PATH=$HOME/.mint/bin:$PATH
+
 export ZSH="$HOME/.oh-my-zsh"
 
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
