@@ -10,6 +10,9 @@ alias fishconf="nvim ~/.config/fish/config.fish"
 
 alias scripts="cd ~/dev/scripts;nvim"
 
+# watch for changes in current folder and then run first arg
+alias watch='(){ while inotifywait -qq -e close_write,moved_to,create .; do "./$1"; done }'
+
 alias dot="dotfiles"
 alias dotfiles="git --git-dir=$HOME/dev/dotfiles --work-tree=$HOME"
 alias dotopen='open $(dot remote -v | grep -o "https[^ ]*" | uniq)'
