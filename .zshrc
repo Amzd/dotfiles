@@ -14,6 +14,8 @@ export PATH=$HOME/.local/bin:$PATH
 # cargo path
 export PATH=$HOME/.cargo/bin:$PATH
 
+export PATH=$HOME/dev/swift-sh/.build/debug/swift-sh:$PATH
+
 export ZSH="$HOME/.oh-my-zsh"
 
 # https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -75,3 +77,12 @@ export INVOKEAI_ROOT="$HOME/dev/InvokeAI"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# Local .zsh_config
+function chpwd() {
+  if [ -r $PWD/.zsh_config ]; then
+    source $PWD/.zsh_config
+  fi
+}
+chpwd
