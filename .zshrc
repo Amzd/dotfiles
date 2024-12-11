@@ -15,7 +15,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
 # mint path https://github.com/yonaskolb/Mint
-export PATH=$HOME/.mint/bin:$PAT
+export PATH=$HOME/.mint/bin:$PATH
 
 export PATH=$HOME/dev/swift-sh/.build/debug/swift-sh:$PATH
 
