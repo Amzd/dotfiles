@@ -11,7 +11,7 @@ alias fishconf="nvim ~/.config/fish/config.fish"
 alias scripts="cd ~/dev/scripts;nvim"
 
 # watch for changes in current folder and then run first arg
-alias watch='(){ while inotifywait -qq -r -e close_write,moved_to,create .; do clear && "./$1"; done }'
+alias watch='(){ while fswatch --one-event . >/dev/null; do clear && "./$1" || true; done }'
 
 alias dot="dotfiles"
 alias dotfiles="git --git-dir=$HOME/dev/dotfiles --work-tree=$HOME"
