@@ -7,10 +7,12 @@
 	name = Casper Zandbergen
 	email = info@casperzandbergen.nl
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !gh auth git-credential
 [credential]
 	helper = osxkeychain
+[core]
+	excludesfile = ~/.gitignore_global
