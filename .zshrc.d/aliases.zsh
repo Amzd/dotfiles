@@ -32,3 +32,5 @@ alias lss="ls -lGqS"
 alias theos="$THEOS"
 
 alias mp3="mpv --no-vid"
+
+alias aseprite="/Applications/Aseprite.app/Contents/MacOS/aseprite"
