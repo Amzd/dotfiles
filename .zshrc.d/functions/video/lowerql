@@ -20,7 +20,7 @@ fi
 read -r "OUTPUT?New file name ($DEFAULT_OUTPUT):" || return 1
 OUTPUT=${OUTPUT:-$DEFAULT_OUTPUT}
 
-ffmpeg -i "$INPUT" -crf "$CRF" "$OUTPUT"
+ffmpeg -i "$INPUT" -vcodec libx265 -crf "$CRF" "$OUTPUT"
 
 
 
